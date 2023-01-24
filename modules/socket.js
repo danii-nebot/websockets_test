@@ -5,7 +5,7 @@ const userMap = {
   // map socket.id to user nick
 };
 function buildMessage(who, what) {
-  // conver to POJO (Plain Old Javascript Object)
+  // convert to POJO (Plain Old Javascript Object)
   // information sent thru the socket has to be able to be stringified & parsed
   // (JSON.stringify, JSON.parse)
   return { id: "1", message: what };
