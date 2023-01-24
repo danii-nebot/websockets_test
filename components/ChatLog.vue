@@ -2,7 +2,7 @@
   <div
     ref="chatBox"
     v-html="chatLog"
-    class="overflow-scroll border border-black-100 max-h-20 h-20 min-h-20 max-w-20"
+    class="m-4 p-2 overflow-scroll border border-black-100 max-h-20 h-20 min-h-20 max-w-20"
   ></div>
 </template>
 <script setup>

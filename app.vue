@@ -31,7 +31,7 @@ onMounted(() => {
 
   socket.on("message", (data) => {
     console.log(data, "<<<<");
-    addToChat(data);
+    addToChat(data.message);
   });
 });
 </script>
