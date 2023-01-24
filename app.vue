@@ -21,7 +21,7 @@ function send() {
   socket.emit("message", text.value);
 }
 onMounted(() => {
-  socket = io("http://192.168.20.31:3000");
+  socket = io(config.public.wssUrl); // "http://192.168.20.31:3000");
 
   socket.on("message", (data) => {
     console.log(data, "<<<<");
