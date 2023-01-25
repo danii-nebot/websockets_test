@@ -8,7 +8,6 @@
 </template>
 
 <script setup>
-// const { $socket } = useNuxtApp();
 import io from "socket.io-client";
 import ChatLog from "./components/ChatLog.vue";
 const config = useRuntimeConfig();
@@ -33,5 +32,10 @@ onMounted(() => {
     console.log(data, "<<<<");
     addToChat(data.message);
   });
+});
+
+// graceful teardown
+onUnmounted(() => {
+  socket.disconnect(true);
 });
 </script>
