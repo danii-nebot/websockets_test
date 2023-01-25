@@ -20,9 +20,13 @@ const { y } = useScroll(chatBox, {
   behavior: "smooth",
 });
 
-watch(chatLog, () => {
-  nextTick(() => {
-    y.value = chatBox.value.scrollHeight;
-  });
-});
+watch(
+  chatLog,
+  () => {
+    nextTick(() => {
+      y.value = chatBox.value.scrollHeight;
+    });
+  },
+  { deep: true }
+);
 </script>
