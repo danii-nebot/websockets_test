@@ -7,6 +7,9 @@
       <ChatMessage v-if="message.type === 'message'" class="max-w-xs">
         {{ message.content }}
       </ChatMessage>
+      <ActivityMessage v-if="message.type === 'activity'">
+        {{ message.content }}
+      </ActivityMessage>
     </div>
   </div>
 </template>

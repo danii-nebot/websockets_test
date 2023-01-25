@@ -24,10 +24,10 @@ export default defineNuxtModule({
       });
 
       io.on("connect", (socket) => {
-        socket.emit("message", buildMessage(socket, `welcome ${socket.id}`));
+        // socket.emit("message", buildMessage(socket, `welcome ${socket.id}`));
 
         socket.broadcast.emit(
-          "message",
+          "join",
           buildMessage(socket, `${socket.id} joined`)
         );
 

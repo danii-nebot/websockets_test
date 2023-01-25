@@ -35,9 +35,15 @@ function send() {
 onMounted(() => {
   socket = io(config.public.wssUrl); // "http://192.168.20.31:3000");
 
+  addToChat("welcome to the chat!", "activity");
   socket.on("message", (data) => {
-    console.log(data, "<<<<");
+    // console.log(data, "<<<<");
     addToChat(data.message);
+  });
+
+  socket.on("join", (data) => {
+    // console.log(data, "<<<<");
+    addToChat(data.message, "activity");
   });
 });
 
