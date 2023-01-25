@@ -12,12 +12,19 @@ import io from "socket.io-client";
 import ChatLog from "./components/ChatLog.vue";
 const config = useRuntimeConfig();
 
-const chatLog = ref("");
+const chatLog = ref([]);
 const text = ref("");
 let socket;
 
-function addToChat(m) {
-  chatLog.value += `<div>${m}</div>`;
+function addToChat(content, type = "message") {
+  // TODO: process content
+  switch (type) {
+  }
+
+  chatLog.value.push({
+    content,
+    type,
+  });
 }
 
 function send() {

@@ -1,9 +1,14 @@
 <template>
   <div
     ref="chatBox"
-    v-html="chatLog"
     class="m-4 p-2 overflow-scroll border border-black-100 max-h-20 h-20 min-h-20 max-w-20"
-  ></div>
+  >
+    <div v-for="(message, i) in chatLog" :key="i">
+      <ChatMessage v-if="message.type === 'message'" class="max-w-xs">
+        {{ message.content }}
+      </ChatMessage>
+    </div>
+  </div>
 </template>
 <script setup>
 import { toRefs } from "vue";
