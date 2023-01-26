@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     // Public keys that are exposed to the client
     public: {
       wssUrl: process.env.WSS || "",
-      apiBase: "", // can be overridden by NUXT_PUBLIC_API_BASE environment variable
+      firebaseApiKey: process.env.FIREBASE_API_KEY,
+      firebaseAuthDomain: process.env.FIREBASE_AUTH_DOMAIN,
     },
   },
   css: ["~/assets/css/tailwind.css"],
